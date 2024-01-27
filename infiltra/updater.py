@@ -5,6 +5,7 @@ import requests
 import stat
 import threading
 import time
+import pkg_resources
 import sys
 
 # Exit Code
@@ -53,9 +54,15 @@ def set_permissions_for_all_executables(directory):
                 os.chmod(file_path, st.st_mode | stat.S_IEXEC)
 
 
-def get_version(version_file_path):
-    with open(version_file_path, "r") as file:
-        return file.read().strip()
+def get_version():
+    try:
+        # Read the version.txt from the package
+        version_file_path = pkg_resources.resource_filename('infiltra', 'version.txt')
+        with open(version_file_path, "r") as file:
+            return file.read().strip()
+    except Exception as e:
+        print(f"Could not read version file: {e}")
+        return "unknown"
 
 
 def get_latest_version_from_github(github_repo):
