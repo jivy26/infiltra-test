@@ -5,8 +5,8 @@ import re
 import sys
 from infiltra.bbot.bbot_parse import bbot_main
 from infiltra.bbot.check_bbot import is_bbot_installed, install_bbot
-from updater import check_and_update
-from icmpecho import run_fping
+from infiltra.updater import check_and_update
+from infiltra.icmpecho import run_fping
 from colorama import init, Fore, Style
 
 

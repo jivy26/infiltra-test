@@ -5,7 +5,7 @@ setup(
     version='2.1',
     packages=find_packages(),
     install_requires=[
-        'subprocess', 'ipaddress', 're', 'colorama', 'sys', 'pup', 'httprobe', 'getpass', 'random', 'datetime'
+        'colorama',
     ],
     entry_points={
         'console_scripts': [
